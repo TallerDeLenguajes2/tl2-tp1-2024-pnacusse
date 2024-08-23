@@ -15,6 +15,9 @@
 
 ### Clase Cadetería:
 
+    mostrarNomnre()
+    mostrarTelefono()
+    listarCadete()
     AltaCadete()
     BajaCadete()
     ReasignarCadete()
