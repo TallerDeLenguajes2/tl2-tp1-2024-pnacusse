@@ -1,0 +1,15 @@
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\bin\Debug\net8.0\tl2-tp1-2024-pnacusse.exe
+C:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\bin\Debug\net8.0\tl2-tp1-2024-pnacusse.deps.json
+C:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\bin\Debug\net8.0\tl2-tp1-2024-pnacusse.runtimeconfig.json
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\bin\Debug\net8.0\tl2-tp1-2024-pnacusse.dll
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\bin\Debug\net8.0\tl2-tp1-2024-pnacusse.pdb
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.AssemblyInfoInputs.cache
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.AssemblyInfo.cs
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.csproj.CoreCompileInputs.cache
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.sourcelink.json
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.dll
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\refint\tl2-tp1-2024-pnacusse.dll
+c:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.pdb
+C:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\tl2-tp1-2024-pnacusse.genruntimeconfig.cache
+C:\Users\grand\OneDrive\Escritorio\Taller2-2024\tl2-tp1-2024-pnacusse\obj\Debug\net8.0\ref\tl2-tp1-2024-pnacusse.dll

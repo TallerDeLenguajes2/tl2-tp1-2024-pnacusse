@@ -15,13 +15,12 @@
 
 ### Clase Cadetería:
 
-    mostrarNomnre()
+    mostrarNombre()
     mostrarTelefono()
     listarCadete()
     AltaCadete()
     BajaCadete()
     ReasignarCadete()
-    ModificarCadete()
 
 ### Clase Cadete:
 
