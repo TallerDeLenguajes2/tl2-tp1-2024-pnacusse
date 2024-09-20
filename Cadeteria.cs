@@ -5,10 +5,13 @@ public class Cadeteria
     private string nombreCadeteria;
     private int telefono;
     private List<Cadete> listadoCadetes;
+    private List<Pedido> listadoPedidos;
 
     public string NombreCadeteria { get => nombreCadeteria; set => nombreCadeteria = value; }
     public int Telefono { get => telefono; set => telefono = value; }
     public List<Cadete> ListadoCadetes { get => listadoCadetes; set => listadoCadetes = value; }
+    public List<Pedido> ListadoPedidos { get => listadoPedidos; set => listadoPedidos = value; }
+
 
     public Cadeteria()
     {
@@ -20,6 +23,7 @@ public class Cadeteria
         this.NombreCadeteria = nombreCadeteria;
         this.Telefono = telefono;
         this.ListadoCadetes = new List<Cadete>();
+        this.listadoPedidos = new List<Pedido>();
         
     }
 
@@ -40,17 +44,28 @@ public class Cadeteria
 
     }
 
+    public void asignarCadeteAPedido(int idPedido, int idCadete)
+    {
+        foreach(Pedido pedido in listadoPedidos)
+        {
+            if(idPedido == pedido.Nro)
+            {
+                pedido.IdCadete = idCadete;
+            }else{
+                Console.WriteLine("Pedido no encontrado");
+            }
+        }
+    }
+
     public void finalizarPedido(int nroPedido)
     {
-        foreach (Cadete cadete in ListadoCadetes)
+        foreach (Pedido pedido in ListadoPedidos)
         {
-            Pedido pedidoFinalizado = cadete.Pedidos.FirstOrDefault(pedido => pedido.Nro == nroPedido);
+            Pedido pedidoFinalizado = listadoPedidos.FirstOrDefault(pedido => pedido.Nro == nroPedido);
 
             if(pedidoFinalizado != null)
-            {
-                cadete.ContPedidos += 1;
-                
-                cadete.Pedidos.Remove(pedidoFinalizado);
+            { 
+                listadoPedidos.Remove(pedidoFinalizado);
 
                 Console.WriteLine($"Pedido: {nroPedido} Terminado Exitósamente. Cadete {cadete.Id} ahora tiene {cadete.ContPedidos} pedidos completos");
 
@@ -88,21 +103,13 @@ public class Cadeteria
         Console.WriteLine($"\nTotal de ganancias: {sum}");
     }
 
-    public void mostrarPedidosCadetes()
-    {
-        foreach(Cadete c in listadoCadetes)
-        {
-            c.listarPedidos();
-        }
-    }
-
     public void mostrarPedidosCadetes(int idCadete)
     {
-        foreach(Cadete c in listadoCadetes)
+        foreach(Pedido pedido in listadoPedidos)
         {
-            if(c.Id == idCadete)
+            if(pedido.IdCadete == idCadete)
             {
-                c.listarPedidos();
+                pedido.listarDatos();
             }
         }
     }
@@ -128,56 +135,94 @@ public class Cadeteria
     {
         Pedido pedido = new Pedido(nroPedido, observacion, estado, nombre, direccion, telefono, referencia);
 
-        foreach(Cadete c in listadoCadetes)
-        {
-            if(c.Id == idCadete)
-            {
-                c.agregarPedido(pedido);
-            }
-        }
+        listadoPedidos.Add(pedido);
     }
 
     public void reasignarOrden(int nroPedido, int idNuevoCadete)
     {
         Pedido pedidoAre = null;
-        Cadete cadeteActual = null;
 
-        foreach(Cadete c in listadoCadetes)
+        foreach(Pedido p in listadoPedidos)
         {
-            foreach(Pedido p in c.Pedidos)
+            if(p.Nro == nroPedido)
             {
-                if(p.Nro == nroPedido)
-                {
-                    pedidoAre = p;
-                    cadeteActual = c;
-                    break;
-                }
+                pedidoAre = p;
+                break;
             }
-
             if(pedidoAre != null)
             {
                 break;
             }
         }
 
-        if(pedidoAre == null || cadeteActual == null)
+        if(pedidoAre == null)
         {
-            Console.WriteLine("Pedido o Cadete no encontrado");
+            Console.WriteLine("Pedido no encontrado");
             return;
         }
-
-        cadeteActual.eliminarPedido(pedidoAre.Nro);
 
         Cadete cadeteNuevo = listadoCadetes.FirstOrDefault(c => c.Id == idNuevoCadete);
 
         if(cadeteNuevo != null)
         {
-            cadeteNuevo.agregarPedido(pedidoAre);
+            pedidoAre.IdCadete = idNuevoCadete;
             Console.WriteLine("Pedido reasignado correctamente");
         }else{
-            cadeteActual.agregarPedido(pedidoAre);
             Console.WriteLine("Cadete nuevo no encontrado, pedido reasignado al cadete actual");
         }
     }
+
+    public void listarPedidos()
+    {
+        foreach(Pedido pedido in listadoPedidos)
+        {
+            pedido.listarDatos();
+        }
+    }
+
+    public void eliminarPedido(int nroPedido)
+    {
+        Pedido pedidoAre = null;
+        foreach(Pedido p in listadoPedidos)
+        {
+            if(p.Nro == nroPedido)
+            {
+                pedidoAre = p;
+                break;
+            }
+        }
+        if(pedidoAre != null)
+        {
+            listadoPedidos.Remove(pedidoAre);
+            Console.WriteLine("El pedido a sido eliminado");
+        }
+    }
+
+    public Pedido getPedido(int nroPedido)
+    {
+        Pedido ped = new Pedido();
+
+        foreach(Pedido p in listadoPedidos)
+        {
+            if(p.Nro == nroPedido)
+            {
+                ped = p;
+            }
+        }
+
+        return ped;
+    }
+
+    public void borrarPedido(int nroPedido)
+    {
+        foreach(Pedido p in listadoPedidos)
+        {
+            if(p.Nro == nroPedido)
+            {
+                listadoPedidos.Remove(p);
+                Console.WriteLine("El Pedido se borró exitosamente");
+            }
+        }
+    } 
         
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("tl2-tp1-2024-pnacusse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceb6eb71f2d658750b68154a86aaa38545ad4e36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d080d6f75646e6b5254da28401f80dec1ca0e7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("tl2-tp1-2024-pnacusse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("tl2-tp1-2024-pnacusse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

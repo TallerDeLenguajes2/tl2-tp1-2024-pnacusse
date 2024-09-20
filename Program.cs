@@ -8,11 +8,10 @@ cadeteria.altaPedido(2, "Pizza Napolitana", "In process", "Julieta", "Buenos Air
 cadeteria.altaPedido(3, "Cafe con medialunas", "Picked Up", "Facundo", "San Lorenzo 777", "+5493875060018", "Espera Afuera", 3);
 cadeteria.altaPedido(4, "Frappe", "Near Dropoff", "Facundo", "San Lorenzo 777", "+5493875060018", "Espera afuera", 1);
 
-cadeteria.mostrarPedidosCadetes();
 cadeteria.mostrarPedidosCadetes(1);
 
 cadeteria.reasignarOrden(1, 4);
-cadeteria.mostrarPedidosCadetes();
+cadeteria.mostrarPedidosCadetes(1);
 
 cadeteria.finalizarPedido(1);
 cadeteria.pagoPorCadete(4);
