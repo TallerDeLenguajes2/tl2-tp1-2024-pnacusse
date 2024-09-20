@@ -67,7 +67,7 @@ public class Cadeteria
             { 
                 listadoPedidos.Remove(pedidoFinalizado);
 
-                Console.WriteLine($"Pedido: {nroPedido} Terminado Exitósamente. Cadete {cadete.Id} ahora tiene {cadete.ContPedidos} pedidos completos");
+                Console.WriteLine($"Pedido: {nroPedido} Terminado Exitósamente.");
 
                 return;
 
@@ -75,33 +75,27 @@ public class Cadeteria
         }
     }
 
-    public void pagoPorCadete(int idCadete)
+    public void jornalAlCobrar(int idCadete)
     {
-        foreach (Cadete c in ListadoCadetes)
+        int contPedidos = 0;
+        foreach (Pedido pedido in listadoPedidos)
         {
-            if(c.Id == idCadete)
+            if(pedido.IdCadete == idCadete)
             {
+                contPedidos +=1;
                 Console.WriteLine("Id Cadete: "+ idCadete);
-                Console.WriteLine("\nPago del dia "+ c.jornalAlCobrar());
+                Console.WriteLine("\nPago del dia "+ contPedidos * 500);
             }
         }
     }
 
-    public void reporteDiario()
+    /*public void reporteDiario()
     {
         int sum = 0;
-        
-        foreach(Cadete c in listadoCadetes)
-        {
-            Console.WriteLine("\n------------------------------------------");
-            Console.WriteLine($"Id Cadete: {c.Id}");
-            Console.WriteLine($"Jornal a pagar: {c.jornalAlCobrar()}");
-            Console.WriteLine($"Pedidos Completados: {c.ContPedidos}");
-            sum = sum + c.jornalAlCobrar();
-        }
+        listarPedidos();
 
         Console.WriteLine($"\nTotal de ganancias: {sum}");
-    }
+    }*/
 
     public void mostrarPedidosCadetes(int idCadete)
     {

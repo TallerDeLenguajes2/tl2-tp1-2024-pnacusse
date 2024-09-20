@@ -14,9 +14,9 @@ cadeteria.reasignarOrden(1, 4);
 cadeteria.mostrarPedidosCadetes(1);
 
 cadeteria.finalizarPedido(1);
-cadeteria.pagoPorCadete(4);
+cadeteria.jornalAlCobrar(4);
 
-cadeteria.reporteDiario();
+//cadeteria.reporteDiario();
 
 cadeteria.bajaCadete(1);
 

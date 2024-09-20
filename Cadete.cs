@@ -27,10 +27,6 @@ public class Cadete
         this.contPedidos = 0;
     }
 
-    public int jornalAlCobrar()
-    {
-        return(this.contPedidos * 500);
-    }
     public void listarDatosCadete()
     {
         Console.WriteLine("------------------------");
