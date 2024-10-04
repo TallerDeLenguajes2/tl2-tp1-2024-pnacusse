@@ -1,18 +1,16 @@
+using System.Text.Json;
+
 public abstract class AccesoDatos
 {
     protected AccesoDatos()
     {
 
     }
-    public abstract Cadetria cargarCadeteria()
-    {
 
-    }
+    public abstract Cadeteria cargarCadeteria();
 
-    public abstract void cargarCadete(Cadeteria cadetria)
-    {
+    public abstract void cargarCadete(Cadeteria cadeteria);
 
-    }
 }
 
 public abstract class AccesoDatosCSV : AccesoDatos
@@ -78,25 +76,82 @@ public abstract class AccesoDatosCSV : AccesoDatos
     }
 }
 
-public abstract class AccesoDatosJSON : AccesoDatos
+public abstract class AccesoDatosJson : AccesoDatos
 {
-    string filePath = "Cadeteria.json";
-    Cadeteria cadeteria = new Cadeteria();
-
-    try
+    public AccesoDatosJson() : base()
     {
-        if(File.Exists(filepath))
+
+    }
+    public override Cadeteria cargarCadeteria()
+    {
+        string filePath = "Cadeteria.json";
+        Cadeteria cadeteria = new Cadeteria();
+
+        try
         {
-            var json string = File.ReadAllLines(filepath);
-            cadeteria = JsonSerializer()
+            if(File.Exists(filepath))
+            {
+                var json = File.ReadAllLines(filepath);
+                cadeteria = JsonSerializer(Desearialize<Cadeteria>(json));
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+        }
+        catch (IOException e)
+        {
+        
+            Console.WriteLine($"Error : {e.Message}");
+        }
+
+        return cadeteria;
+
+    }
+    
+    public override void cargarCadete(Cadeteria cadeteria)
+    {
+        if (cadeteria == null)
+        {
+            Console.WriteLine("Error");
+            return;
+        }
+        string filePath = "Cadetes.json";
+
+        try
+        {
+            if (!File.Exists(filePath))
+            {
+                Console.WriteLine($"'{filePath}' no encontrado");
+                return;
+            }
+        
+            string json = File.ReadAllText(filePath);
+        
+            List<Cadete> cadetes = JsonSerializer.Deserialize<List<Cadete>>(json);
+
+            if (cadetes == null || cadetes.Count == 0)
+            {
+                Console.WriteLine("Error");
+                return;
+            }
+
+            foreach (Cadete cadete in cadetes)
+            {
+                Cadeteria.altaCadete(cadete);
+            }
+        
+            Console.WriteLine($"Cadetes Cargados");
+        }
+        catch (IOException e)
+        {
+            Console.WriteLine($"Error : {e.Message}");
         }
     }
-    catch (System.Exception)
-    {
-        
-        throw;
-    }
 }
+
+
+
 
 
 

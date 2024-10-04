@@ -107,7 +107,7 @@ public class Cadeteria
             }
         }
     }
-    public void altaCadete(Cadete cadete)
+    public static void altaCadete(Cadete cadete)
     {
         ListadoCadetes.Add(cadete);
     }

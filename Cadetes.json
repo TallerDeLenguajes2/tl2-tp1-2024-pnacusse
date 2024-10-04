@@ -1,0 +1,20 @@
+[
+  {
+    "id" : 1,
+    "nombre" : "papo",
+    "direccion": "Calle 111",
+    "telefono" : 11111111
+  },
+  {
+    "id" : 2,
+    "nombre" : "pepo",
+    "direccion": "Calle 222",
+    "telefono" : 22222222
+  },
+  {
+    "id" : 1,
+    "nombre" : "pipo",
+    "direccion": "Calle 333",
+    "telefono" : 33333333
+  }
+]
