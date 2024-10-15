@@ -27,7 +27,7 @@ public class Pedido
 
     }
 
-    public void listarDatos()
+    /*public void listarDatos()
     {
         Console.WriteLine("\n-------------------------------------");
         Console.WriteLine($"Nro: {Nro}");
@@ -42,7 +42,7 @@ public class Pedido
     public void verDatosCliente()
     {
         
-    }
+    }*/
     
     
 }

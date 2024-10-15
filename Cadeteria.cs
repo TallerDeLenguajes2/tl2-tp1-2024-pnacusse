@@ -36,12 +36,13 @@ public class Cadeteria
     {
         Console.WriteLine(Telefono);
     }
-    public void listarCadetes()
+    public List<Cadete> listarCadetes()
     {
-        foreach (Cadete c in ListadoCadetes)
+        /*foreach (Cadete c in ListadoCadetes)
         {
             c.listarDatosCadete();
-        }
+        }*/
+        return this.ListadoCadetes;
 
     }
 
@@ -98,7 +99,7 @@ public class Cadeteria
         Console.WriteLine($"\nTotal de ganancias: {sum}");
     }*/
 
-    public void mostrarPedidosCadetes(int idCadete)
+    /*public void mostrarPedidosCadetes(int idCadete)
     {
         foreach(Pedido pedido in listadoPedidos)
         {
@@ -107,7 +108,7 @@ public class Cadeteria
                 pedido.listarDatos();
             }
         }
-    }
+    }*/
     public static void altaCadete(Cadete cadete)
     {
         listadoCadetes.Add(cadete);
@@ -167,13 +168,13 @@ public class Cadeteria
         }
     }
 
-    public void listarPedidos()
+    /*public void listarPedidos()
     {
         foreach(Pedido pedido in listadoPedidos)
         {
             pedido.listarDatos();
         }
-    }
+    }*/
 
     public void eliminarPedido(int nroPedido)
     {

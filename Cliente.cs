@@ -23,8 +23,8 @@ public class Cliente
         
     }
 
-    public void detallesCliente()
+    /*public void detallesCliente()
     {
         Console.WriteLine($"Nombre: {Nombre}, Dirección: {Direccion}, Telefono: {Telefono}, Referencia: {DatosReferenciaDireccion}");
-    }
+    }*/
 }

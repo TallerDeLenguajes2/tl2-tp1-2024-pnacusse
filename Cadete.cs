@@ -27,7 +27,7 @@ public class Cadete
         this.contPedidos = 0;
     }
 
-    public void listarDatosCadete()
+    /*public void listarDatosCadete()
     {
         Console.WriteLine("------------------------");
         Console.WriteLine($"Cadete {Id}");
@@ -35,6 +35,6 @@ public class Cadete
         Console.WriteLine($"Dirección:{Direccion}");
         Console.WriteLine($"Telefono:{Telefono}");
 
-    }
+    }*/
 
 }
