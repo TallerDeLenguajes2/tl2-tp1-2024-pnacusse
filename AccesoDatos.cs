@@ -13,7 +13,7 @@ public abstract class AccesoDatos
 
 }
 
-public abstract class AccesoDatosCSV : AccesoDatos
+public class AccesoDatosCSV : AccesoDatos
 {
     public AccesoDatosCSV() : base()
     {
@@ -64,7 +64,7 @@ public abstract class AccesoDatosCSV : AccesoDatos
             int columna4 = int.Parse(campo[3]);
 
             Cadete cadete = new Cadete(columna1, columna2, columna3, columna4);
-            cadeteria.altaCadete(cadete);    
+            Cadeteria.altaCadete(cadete);    
             
         }
     }
@@ -76,7 +76,7 @@ public abstract class AccesoDatosCSV : AccesoDatos
     }
 }
 
-public abstract class AccesoDatosJson : AccesoDatos
+public class AccesoDatosJson : AccesoDatos
 {
     public AccesoDatosJson() : base()
     {
@@ -84,15 +84,15 @@ public abstract class AccesoDatosJson : AccesoDatos
     }
     public override Cadeteria cargarCadeteria()
     {
-        string filePath = "Cadeteria.json";
+        string filepath = "Cadeteria.json";
         Cadeteria cadeteria = new Cadeteria();
 
         try
         {
             if(File.Exists(filepath))
             {
-                var json = File.ReadAllLines(filepath);
-                cadeteria = JsonSerializer(Desearialize<Cadeteria>(json));
+                var json = File.ReadAllText(filepath);
+                cadeteria = JsonSerializer.Deserialize<Cadeteria>(json);
             }
             else
             {
@@ -116,17 +116,17 @@ public abstract class AccesoDatosJson : AccesoDatos
             Console.WriteLine("Error");
             return;
         }
-        string filePath = "Cadetes.json";
+        string filepath = "Cadetes.json";
 
         try
         {
-            if (!File.Exists(filePath))
+            if (!File.Exists(filepath))
             {
-                Console.WriteLine($"'{filePath}' no encontrado");
+                Console.WriteLine($"'{filepath}' no encontrado");
                 return;
             }
         
-            string json = File.ReadAllText(filePath);
+            string json = File.ReadAllText(filepath);
         
             List<Cadete> cadetes = JsonSerializer.Deserialize<List<Cadete>>(json);
 

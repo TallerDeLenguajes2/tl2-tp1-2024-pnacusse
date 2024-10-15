@@ -4,7 +4,7 @@ public class Cadeteria
 {
     private string nombreCadeteria;
     private int telefono;
-    private List<Cadete> listadoCadetes;
+    private static List<Cadete> listadoCadetes;
     private List<Pedido> listadoPedidos;
 
     public string NombreCadeteria { get => nombreCadeteria; set => nombreCadeteria = value; }
@@ -15,14 +15,15 @@ public class Cadeteria
 
     public Cadeteria()
     {
-
+        listadoCadetes = new List<Cadete>();
+        listadoPedidos = new List<Pedido>();
     }
 
     public Cadeteria(string nombreCadeteria, int telefono)
     {
         this.NombreCadeteria = nombreCadeteria;
         this.Telefono = telefono;
-        this.ListadoCadetes = new List<Cadete>();
+        Cadeteria.listadoCadetes = new List<Cadete>();
         this.listadoPedidos = new List<Pedido>();
         
     }
@@ -109,7 +110,7 @@ public class Cadeteria
     }
     public static void altaCadete(Cadete cadete)
     {
-        ListadoCadetes.Add(cadete);
+        listadoCadetes.Add(cadete);
     }
     public void bajaCadete(int idCadete)
     {

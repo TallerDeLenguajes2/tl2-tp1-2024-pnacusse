@@ -1,6 +1,5 @@
 ﻿Cadeteria cadeteria = cargarCadeteria();
 cadeteria.mostrarNombre();
-cargarCadete(cadeteria);
 cadeteria.listarCadetes();
 
 cadeteria.altaPedido(1, "sanguche de milanesa", "In process", "Facundo", "Buenos Aires 662", "+5493875060018", "No anda el portero", 1);
